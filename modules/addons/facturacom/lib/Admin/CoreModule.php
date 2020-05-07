@@ -246,7 +246,7 @@ class CoreModule
         $Setting = $this->getGonfiguration();
         $uri_base = $this->getURL($Setting);
 
-        if (!is_null($Pedidos)) {
+        if (!isset($Pedidos) || is_null($Pedidos)) {
 			$uri = $uri_base . 'v3/cfdi33/list?type_document=factura&client_reference=' . $UserID;
 		} else {
 			$uri = $uri_base . 'v3/cfdi33/list?type_document=factura&client_reference=' . $UserID . '&pedidos=' . base64_encode(implode(",", $Pedidos));
@@ -524,7 +524,7 @@ class CoreModule
             }
 
 
-            $importeImpuesto = round(($productPrice * 0.16), 2);
+            $importeImpuesto = round(($productPrice * 0.16), 6);
 
             //Para productos cero pesos
             if($importeImpuesto >=  0 && $importeImpuesto <=  1) {
@@ -594,6 +594,7 @@ class CoreModule
         ];
 
         $uri = $uri_base . 'v3/cfdi33/create';
+        
 
         //Conectamos con api factura.com y tramos todas las facturas
         $restApi = new Client;

@@ -27,11 +27,11 @@
     <table id="adminInvoices" width="100%" cellspacing="1" cellpadding="3">
         <thead>
             <tr>
-                <th>Folio</th>
+                <th>CFDI</th>
                 <th>Fecha de creación</th>
                 <th>Receptor</th>
-                <th>Núm. de cliente</th>
-                <th>Núm. de pedido</th>
+                <th>Id Cliente</th>
+                <th>Factura</th>
                 <th>Monto total</th>
                 <th>Estado</th>
                 <th>PDF</th>
@@ -44,9 +44,9 @@
             <tr>
                 <td>  {$invoice.Folio} </td>
                 <td>  {$invoice.FechaTimbrado} </td>
-                <td>  {$invoice.RazonSocialReceptor} </td>
-                <td><a href="{$systemURL}admin/clientssummary.php?userid={$invoice.ReferenceClient}" target="_blank">{$invoice.ReferenceClient}</a></td>
-                <td><a href="{$systemURL}admin/invoices.php?action=edit&id={$invoice.NumOrder}" target="_blank">{$invoice.NumOrder}</a></td>
+                <td>  {$invoice.Receptor} </td>
+                <td><a href="{$systemURL}71admin17/clientssummary.php?userid={$invoice.ReferenceClient}" target="_blank">{$invoice.ReferenceClient}</a></td>
+                <td><a href="{$systemURL}71admin17/invoices.php?action=edit&id={$invoice.NumOrder}" target="_blank">{$invoice.NumOrder}</a></td>
                 <td>  $ {$invoice.Total|number_format:2:".":","} </td>
                 <td><span class="{if $invoice.Status eq 'Cancelada'}alert-danger{else}alert-success{/if}">  {$invoice.Status} </span></td>
                 <td><a href="{$systemURL}modules/addons/facturacom/lib/downloadhandler.php?uid={$invoice.UID}&type=pdf&version={$invoice.Version}" target="_blank">PDF</a></td>

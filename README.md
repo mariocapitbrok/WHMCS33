@@ -1,8 +1,4 @@
-# WHMCS Addon de Factura.com versión 2.2.0.1 (Capitbrok)
-
-## [2.2.0.1] - 2020-05-07 (Capitbrok)
-- Ahora se despliega el historial de facturas correctamente en el área de clientes.
-- Los términos se corrigen en el área de clientes.
+# WHMCS Addon de Factura.com versión 2.2.0
 
 # Changelog
 
